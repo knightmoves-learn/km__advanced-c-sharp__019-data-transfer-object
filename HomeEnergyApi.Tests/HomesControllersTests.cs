@@ -2,7 +2,10 @@
 using System.Text;
 using System.Text.Json;
 using System.Dynamic;
+using System.Data.SQLite;
 using HomeEnergyApi.Models;
+using HomeEnergyApi.Controllers;
+using HomeEnergyApi.Tests.Extensions;
 
 [TestCaseOrderer("HomeEnergyApi.Tests.Extensions.PriorityOrderer", "HomeEnergyApi.Tests")]
 public class HomesControllersTests
@@ -89,13 +92,20 @@ public class HomesControllersTests
 
         Assert.True(hasExpected,
             $"Home Energy Api did not return the correct Home being created on POST at {url}\nHomeDto Sent: {strPostTestHomeDto}\nHome Received:{responseContent}");
+    
     }
 
     [Theory, TestPriority(3)]
-    [InlineData("/admin/Homes/1")]
+    [InlineData("/admin/Homes")]
     public async Task HomeEnergyApiCanPUTAHomeGivenAValidHomeDto(string url)
     {
         var client = _factory.CreateClient();
+
+        var getAllResponse = await client.GetAsync("/Homes");
+        string getAllResponseStr = await getAllResponse.Content.ReadAsStringAsync();
+        dynamic getAllResponseObj = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(getAllResponseStr);
+        string urlId = getAllResponseObj[getAllResponseObj.Count - 1].Id;
+        url = url + $"/{urlId}";
 
         HomeDto putTestHomeDto = testHomeDto;
         putTestHomeDto.OwnerLastName = "Putty";
