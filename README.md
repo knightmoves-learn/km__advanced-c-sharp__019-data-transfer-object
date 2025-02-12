@@ -1,8 +1,8 @@
-# 017 Task Based Async Pattern
+# 019 Data Transfer Object
 
 ## Lecture
 
-[![# One To One Relationship](https://img.youtube.com/vi/hNoaqRD51Mo/0.jpg)](https://www.youtube.com/watch?v=hNoaqRD51Mo)
+[![# Data Transfer Object](https://img.youtube.com/vi/eFf57pSNnmM/0.jpg)](https://www.youtube.com/watch?v=eFf57pSNnmM)
 
 ## Instructions
 
