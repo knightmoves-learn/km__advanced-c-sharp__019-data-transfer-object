@@ -48,14 +48,13 @@ In your terminal
 - Along with `using` statements being added, any packages needed for the assignment have been pre-installed for you, however in the future you may need to add these yourself
 
 ## Building toward CSTA Standards:
-- Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects (3A-AP-17) https://www.csteachers.org/page/standards
-- Create artifacts by using procedures within a program, combinations of data and procedures, or independent but interrelated programs (3A-AP-18) https://www.csteachers.org/page/standards
-- Compare and contrast fundamental data structures and their uses (3B-AP-12) https://www.csteachers.org/page/standards
-- Construct solutions to problems using student-created components, such as procedures, modules and/or objects (3B-AP-14) https://www.csteachers.org/page/standards
-- Demonstrate code reuse by creating programming solutions using libraries and APIs (3B-AP-16) https://www.csteachers.org/page/standards
-- Modify an existing program to add additional functionality and discuss intended and unintended implications (e.g., breaking other functionality) (3B-AP-22) https://www.csteachers.org/page/standards
+- Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects (3A-AP-17)
+- Create artifacts by using procedures within a program, combinations of data and procedures, or independent but interrelated programs (3A-AP-18)
+- Evaluate the tradeoffs in how data elements are organized and where data is stored (3A-DA-10)
+- Compare and contrast fundamental data structures and their uses (3B-AP-12)
+- Construct solutions to problems using student-created components, such as procedures, modules and/or objects (3B-AP-14)
 
 ## Resources
-- https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-many
+- https://en.wikipedia.org/wiki/Data_transfer_object
 
 Copyright &copy; 2025 Knight Moves. All Rights Reserved.
