@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeEnergyApi.Migrations
 {
     [DbContext(typeof(HomeDbContext))]
-    [Migration("20250212220826_AddHomeDtoChanges")]
-    partial class AddHomeDtoChanges
+    [Migration("20250207085637_DtoMigrationsAdd")]
+    partial class DtoMigrationsAdd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,7 @@ namespace HomeEnergyApi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StreetAddress")
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

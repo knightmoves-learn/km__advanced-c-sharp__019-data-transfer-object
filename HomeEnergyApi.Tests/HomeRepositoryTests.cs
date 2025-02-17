@@ -47,6 +47,7 @@ FROM Homes;";
 
     HomeDbContext CreateContext() => new HomeDbContext(_contextOptions);
 
+    [Fact]
     public void Dispose() => _connection.Dispose();
 
     [Fact, TestPriority(1)]

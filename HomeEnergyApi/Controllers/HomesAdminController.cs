@@ -17,43 +17,17 @@ namespace HomeEnergyApi.Controllers
             this.zipCodeLocationService = zipCodeLocationService;
         }
 
-        public Home Map(HomeDto homeDto)
-        {
-            Home home = new(homeDto.OwnerLastName, homeDto.StreetAddress, homeDto.City);
-
-            if(homeDto.MonthlyElectricUsage != null)
-            {
-                HomeUsageData homeUsageData = new();
-                homeUsageData.MonthlyElectricUsage = homeDto.MonthlyElectricUsage;
-                home.HomeUsageData = homeUsageData;
-            }
-
-            if(homeDto.ProvidedUtilities != null)
-            {
-                foreach(string utility in homeDto.ProvidedUtilities)
-                {
-                    UtilityProvider utilityProvider = new();
-                    utilityProvider.ProvidedUtility = utility;
-                    home.UtilityProviders.Add(utilityProvider);
-                }
-            }
-
-            return home;
-
-        }
 
         [HttpPost]
-        public IActionResult CreateHome([FromBody] HomeDto homeDto)
+        public IActionResult CreateHome([FromBody] Home home)
         {
-            Home home = Map(homeDto);
             repository.Save(home);
             return Created($"/Homes/{repository.Count()}", home);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateHome([FromBody] HomeDto homeDto, [FromRoute] int id)
-        {            
-            Home home = Map(homeDto);
+        public IActionResult UpdateHome([FromBody] Home home, [FromRoute] int id)
+        {
             if (id > (repository.Count() - 1))
             {
                 return NotFound();
