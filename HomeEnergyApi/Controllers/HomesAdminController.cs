@@ -30,11 +30,11 @@ namespace HomeEnergyApi.Controllers
 
             if(homeDto.ProvidedUtilities != null)
             {
+                home.UtilityProviders = [];
                 foreach(string utility in homeDto.ProvidedUtilities)
                 {
                     UtilityProvider utilityProvider = new();
                     utilityProvider.ProvidedUtility = utility;
-                    home.UtilityProviders = [];
                     home.UtilityProviders.Add(utilityProvider);
                 }
             }
